@@ -1,11 +1,19 @@
 function checkForName() {
     const name = document.getElementById('name').value;
-    if (name == undefined) {
-        return 'name field is empty'
+    if (nameIsValid(name)) {
+        console.log("::: Running checkForName :::", name);
+        document.getElementById('welcome').style.color = "grey";
+        document.getElementById('welcome').innerHTML = `Welcome ${name}! hang on while we process your request...`
     }
-    console.log("::: Running checkForName :::", name);
-    document.getElementById('welcome').style.color = "grey";
-    document.getElementById('welcome').innerHTML = `Welcome ${name}! hang on while we process your request...`
+    
 }
 
-export { checkForName }
+ 
+const nameIsValid = (name)=> {
+    if (name == undefined || name == '') {
+        return false
+    }
+    return true
+}
+
+export { checkForName, nameIsValid }

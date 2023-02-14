@@ -16,14 +16,18 @@ const options = {
   body: JSON.stringify(data)
 };
   
-  
-  console.log("::: Form Submitted :::")
+  if (validateURL(url)) {
+    console.log("::: Form Submitted :::")
   fetch('http://localhost:8080/test', options)
     .then(res => res.json())
       .then(function (res) {
         console.log(res)
         displayData(res['data'])
     })
+  } else {
+    alert('please enter url to validate')
+  }
+  
 
             
 }
@@ -49,4 +53,10 @@ function displayData(res) {
   document.getElementById('text_sample_4').innerHTML = res.sentence_list[3]['text'];
   document.getElementById('text_sample_5').innerHTML = res.sentence_list[4]['text'];
 }
-export { handleSubmit }
+
+
+const pattern = new RegExp('^(https?:\\/\\/)?'+ '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+'((\\d{1,3}\\.){3}\\d{1,3}))'+'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+'(\\?[;&a-z\\d%_.~+=-]*)?'+'(\\#[-a-z\\d_]*)?$','i');
+function validateURL(str) {
+  return !!pattern.test(str);
+}
+export {validateURL, handleSubmit}
