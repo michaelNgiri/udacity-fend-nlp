@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <!-- <link rel="stylesheet" href="/styles/resets.css">
+        <link rel="stylesheet" href="/styles/base.css">
+        <link rel="stylesheet" href="/styles/header.css">
+        <link rel="stylesheet" href="/styles/form.css">
+        <link rel="stylesheet" href="/styles/footer.css"> -->
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <p>Please enter link to an article</p>
+                <form class="" onsubmit="return false" method="POST">
+                    <input required id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input required id="url" type="url" name="input" value="" placeholder="Enter URL to validate">
+                    <input type="submit" id="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </section>
+            <p id="welcome"></p>
+            <section>
+                <div id="results">
+                <strong>Results:</strong>
+                <br>
+                    <p>
+                        SUBJECTIVITY:   <span class="result_holder" id="subjectivity"></span>
+                    </p>
+                    <p>
+                        CONFIDENCE:    <span class="result_holder"  id="confidence"></span>
+                    </p>
+                    <p>
+                        AGREEMENT:    <span class="result_holder"  id="agreement"></span>
+                    </p>
+                    <p>
+                        IRONY:        <span class="result_holder"  id="irony"></span>
+                    </p>
+                    <p>
+                        SCORE TAG:    <span class="result_holder"  id="score_tag"></span>
+                    </p>
+                    <p>
+                        CREDITS:      <span class="result_holder"  id="credits"></span>
+                    </p>
+                    <p>
+                        MODEL:        <span class="result_holder"  id="model"></span>
+                    </p>
+                    <br>
+                    <p>
+                        TEXT SAMPLES: <hr>
+                        <span class="result_holder"  id="text_sample_1"></span> <hr>
+                        <span class="result_holder"  id="text_sample_2"></span> <hr>
+                        <span class="result_holder"  id="text_sample_3"></span> <hr>
+                        <span class="result_holder"  id="text_sample_4"></span> <hr>
+                        <span class="result_holder"  id="text_sample_5"></span>
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+        <script type="text/javascript" src="../index.js"></script>
+        <script>
+            // load serviceworker
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>

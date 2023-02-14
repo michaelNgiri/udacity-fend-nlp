@@ -1,0 +1,29 @@
+/** @format */
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: #f3f3f3;
+	text-align: center;
+	margin-top: 5em;
+}
+
+main {
+	flex: 2;
+}
+
+section {
+	max-width: 800px;
+	margin: 50px auto;
+}
+.result_holder {
+	color: gray;
+	padding: 2em;
+}
+#results {
+	margin-left: 3.2em;
+	text-align: left;
+	justify-content: right;
+	display: none;
+}
