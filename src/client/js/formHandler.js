@@ -25,7 +25,7 @@ const options = {
         displayData(res['data'])
     })
   } else {
-    alert('please enter url to validate')
+    alert('please enter a valid url to validate')
   }
   
 

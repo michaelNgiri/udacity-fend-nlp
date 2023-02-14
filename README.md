@@ -15,3 +15,7 @@
 3. run `npm run build-prod`
 4. run `npm start`
 5. open your browser and navigate to `localhost:8080`
+
+## Dependencies:
+
+- Node, vanilla js, npm

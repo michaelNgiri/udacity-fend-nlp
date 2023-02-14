@@ -13,5 +13,4 @@ import './styles/header.scss'
 export { handleSubmit, checkForName };
 
 const submitBTN = document.getElementById("submit")
-submitBTN.addEventListener("click", checkForName);
 submitBTN.addEventListener("click", handleSubmit);

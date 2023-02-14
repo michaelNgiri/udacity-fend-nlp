@@ -19,10 +19,3 @@ describe("Testing the namechecker", () => {
         expect(nameIsValid("myname")).toBe(true);
     })
 });
-
-
-// describe("Testing the homepage", () => {
-//     test("A valid url should return a response", () => {
-//         expect(fetch('http://localhost:8080/')).not.toBe(400);
-//     })
-// });

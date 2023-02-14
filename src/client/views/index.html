@@ -3,11 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <!-- <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css"> -->
     </head>
 
     <body>
@@ -25,9 +20,11 @@
             <section>
                 <p>Please enter link to an article</p>
                 <form class="" onsubmit="return false" method="POST">
-                    <input required id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input required id="url" type="url" name="input" value="" placeholder="Enter URL to validate">
-                    <input type="submit" id="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    <label class="label" for="name">Enter name (optional)</label>
+                    <input required id="name" type="text" name="input" value="" placeholder="Name(Optional)">
+                    <label class="label" for="url">URL to validate(required)</label>
+                    <input required id="url" type="url" name="input" value="" placeholder="URL to validate(required)">
+                    <input type="submit" id="submit" name="" value="submit">
                 </form>
             </section>
             <p id="welcome"></p>
@@ -70,12 +67,15 @@
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <div id="footer">
+                <p>Udacity frontend project &copy; 2023</p>
+            </div>
         </footer>
         <script type="text/javascript" src="../index.js"></script>
         <script>
             // load serviceworker
             if ('serviceWorker' in navigator) {
+                console.log("::ServiceWorker is ready::")
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });
